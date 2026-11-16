@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom New Tab</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="wallpaper"></div>
+    <div id="search-container">
+        <div id="search-wrapper">
+            <div id="search-bar">
+                <div id="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <input type="text" id="search-input" placeholder="ค้นหาบนเว็บ..." autofocus>
+                <div id="search-clear" class="hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+            <div id="search-engines">
+                <button class="search-engine active" data-engine="google">Google</button>
+                <button class="search-engine" data-engine="bing">Bing</button>
+                <button class="search-engine" data-engine="duck">DuckDuckGo</button>
+                <button class="search-engine" data-engine="youtube">YouTube</button>
+            </div>
+        </div>
+    </div>
+    <!-- ปุ่มฟันเฟือง -->
+    <button id="gear-button">
+        <img id="gear-icon" src="icons/gear.png" alt="Settings">
+    </button>
+    <!-- Sidebar -->
+    <div id="settings-sidebar" class="hidden">
+        <div id="sidebar-header">
+            <h3>ตั้งค่า Wallpaper</h3>
+            <button id="close-sidebar">❌</button>
+        </div>
+        <div class="button-container">
+            <label for="uploadWallpaper" class="button-style-label">
+                <span class="button-icon">📂</span> เลือกไฟล์ Wallpaper
+            </label>
+            <input type="file" id="uploadWallpaper" accept="image/*">
+            <button id="chooseColor" class="button-style">
+                <span class="button-icon">🎨</span> เลือกสีพื้นหลัง
+            </button>
+        </div>
+        <h4>🎨 สีพื้นหลัง</h4>
+        <div id="color-palette"></div>
+        <div id="color-custom-row">
+            <input type="color" id="palette-picker" value="#ffffff">
+            <input type="text" id="palette-text" placeholder="#FF0000" maxlength="7">
+            <button id="palette-apply" class="mini-btn">ใช้</button>
+        </div>
+        <h4>Default Theme</h4>
+        <div id="default-theme"></div>
+        <div id="wall-tabs">
+            <button class="wall-tab active" data-tab="using">กำลังใช้</button>
+            <button class="wall-tab" data-tab="saved">คลังบันทึก</button>
+        </div>
+        <div id="tab-using" class="wall-panel">
+            <div id="fit-slot"></div>
+            <h4>ประวัติ Wallpaper</h4>
+            <div id="history"></div>
+        </div>
+        <div id="tab-saved" class="wall-panel panel-hidden">
+            <button id="save-current" class="button-style"><span class="button-icon">💾</span> บันทึกรูปปัจจุบัน</button>
+            <div id="library"></div>
+            <p id="library-empty" class="empty-note">ยังไม่มีรูปในคลัง</p>
+        </div>
+    </div>
+    <script src="newtab.js"></script>
+</body>
+</html>
